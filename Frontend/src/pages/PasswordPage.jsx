@@ -44,6 +44,7 @@ export default function PasswordPage() {
   const [password, setPassword] = useState('');
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [forceVisible, setForceVisible] = useState(false);
 
   const analyzePassword = useCallback(async (pwd) => {
     if (!pwd.trim()) {
@@ -88,6 +89,7 @@ export default function PasswordPage() {
 
   const handleChange = (value) => {
     setPassword(value);
+    setForceVisible(false);
     const timeout = setTimeout(() => analyzePassword(value), 300);
     return () => clearTimeout(timeout);
   };
@@ -95,6 +97,7 @@ export default function PasswordPage() {
   const handleGenerate = () => {
     const pwd = generateStrongPassword(16);
     setPassword(pwd);
+    setForceVisible(true);
     analyzePassword(pwd);
   };
 
@@ -115,7 +118,7 @@ export default function PasswordPage() {
           </div>
 
           {/* Input */}
-          <PasswordInput value={password} onChange={handleChange} />
+          <PasswordInput value={password} onChange={handleChange} forceVisible={forceVisible} />
 
           {/* Generator */}
           <div className="flex justify-end">
