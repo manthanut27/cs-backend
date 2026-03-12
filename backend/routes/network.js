@@ -26,4 +26,18 @@ router.patch('/trust', async (req, res, next) => {
   }
 });
 
+// PATCH /api/network/untrust — Mark a device as untrusted
+router.patch('/untrust', async (req, res, next) => {
+  try {
+    const { mac_address } = req.body;
+    if (!mac_address) {
+      return res.status(400).json({ error: true, message: 'mac_address is required' });
+    }
+    const result = await NetworkService.untrustDevice(mac_address);
+    res.json(result);
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;

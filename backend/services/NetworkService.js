@@ -4,6 +4,9 @@ const AlertService = require('./AlertService');
 const { broadcast } = require('../ws/WebSocketServer');
 const logger = require('../utils/logger');
 
+// Fallback in-memory trust store when Supabase is not configured
+const trustedMacs = new Set();
+
 /**
  * Parse ARP table output (cross-platform)
  */
@@ -127,11 +130,21 @@ async function getDevices() {
     };
   }
 
-  // Fallback: return ARP devices with default trust=false
-  const unknownCount = arpDevices.length;
+  // Fallback: return ARP devices with trust flag from in-memory store
+  const devicesWithTrust = arpDevices.map((d) => {
+    const mac = d.mac_address.toUpperCase();
+    return {
+      ...d,
+      mac_address: mac,
+      is_trusted: trustedMacs.has(mac),
+      last_seen: new Date().toISOString(),
+    };
+  });
+
+  const unknownCount = devicesWithTrust.filter((d) => !d.is_trusted).length;
   return {
     scanned_at: new Date().toISOString(),
-    devices: arpDevices.map(d => ({ ...d, is_trusted: false, last_seen: new Date().toISOString() })),
+    devices: devicesWithTrust,
     unknownCount,
   };
 }
@@ -140,14 +153,38 @@ async function getDevices() {
  * Mark a device as trusted by MAC address
  */
 async function trustDevice(macAddress) {
+  const mac = macAddress.toUpperCase();
+
   if (supabase) {
     const { error } = await supabase
       .from('network_devices')
       .update({ is_trusted: true })
-      .eq('mac_address', macAddress);
+      .eq('mac_address', mac);
     if (error) throw error;
+  } else {
+    trustedMacs.add(mac);
   }
-  return { mac_address: macAddress, is_trusted: true };
+
+  return { mac_address: mac, is_trusted: true };
 }
 
-module.exports = { getDevices, trustDevice, scanARP };
+/**
+ * Mark a device as untrusted by MAC address
+ */
+async function untrustDevice(macAddress) {
+  const mac = macAddress.toUpperCase();
+
+  if (supabase) {
+    const { error } = await supabase
+      .from('network_devices')
+      .update({ is_trusted: false })
+      .eq('mac_address', mac);
+    if (error) throw error;
+  } else {
+    trustedMacs.delete(mac);
+  }
+
+  return { mac_address: mac, is_trusted: false };
+}
+
+module.exports = { getDevices, trustDevice, untrustDevice, scanARP };

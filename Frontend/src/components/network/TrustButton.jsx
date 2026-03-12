@@ -11,11 +11,24 @@ export default function TrustButton({ macAddress, isTrusted, onUpdate }) {
     }
   };
 
+  const handleUntrust = async () => {
+    try {
+      await api.patch('/network/untrust', { mac_address: macAddress });
+      if (onUpdate) onUpdate();
+    } catch (err) {
+      console.error('Failed to untrust device:', err);
+    }
+  };
+
   if (isTrusted) {
     return (
-      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-emerald-500/15 text-emerald-400 border border-emerald-500/20">
-        <ShieldCheck size={10} /> Trusted
-      </span>
+      <button
+        onClick={handleUntrust}
+        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[10px] font-medium bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 transition-colors border border-emerald-500/30"
+        title="Mark device as untrusted"
+      >
+        <ShieldCheck size={10} /> Untrust
+      </button>
     );
   }
 

@@ -3,7 +3,42 @@ import PasswordInput from '../components/password/PasswordInput';
 import StrengthMeter from '../components/password/StrengthMeter';
 import { useState, useCallback } from 'react';
 import api from '../api/client';
-import { ShieldCheck } from 'lucide-react';
+import { ShieldCheck, Wand2 } from 'lucide-react';
+
+function generateStrongPassword(length = 16) {
+  const upper = 'ABCDEFGHJKLMNPQRSTUVWXYZ';
+  const lower = 'abcdefghijkmnopqrstuvwxyz';
+  const digits = '23456789';
+  const symbols = '!@#$%^&*()-_=+[]{}:;,.?';
+  const all = upper + lower + digits + symbols;
+
+  const picks = [
+    upper[Math.floor(Math.random() * upper.length)],
+    lower[Math.floor(Math.random() * lower.length)],
+    digits[Math.floor(Math.random() * digits.length)],
+    symbols[Math.floor(Math.random() * symbols.length)],
+  ];
+
+  const getRandomInt = (max) => {
+    if (typeof window !== 'undefined' && window.crypto?.getRandomValues) {
+      const array = new Uint32Array(1);
+      window.crypto.getRandomValues(array);
+      return array[0] % max;
+    }
+    return Math.floor(Math.random() * max);
+  };
+
+  for (let i = picks.length; i < length; i += 1) {
+    picks.push(all[getRandomInt(all.length)]);
+  }
+
+  for (let i = picks.length - 1; i > 0; i -= 1) {
+    const j = getRandomInt(i + 1);
+    [picks[i], picks[j]] = [picks[j], picks[i]];
+  }
+
+  return picks.join('');
+}
 
 export default function PasswordPage() {
   const [password, setPassword] = useState('');
@@ -53,9 +88,14 @@ export default function PasswordPage() {
 
   const handleChange = (value) => {
     setPassword(value);
-    // Debounce analysis
     const timeout = setTimeout(() => analyzePassword(value), 300);
     return () => clearTimeout(timeout);
+  };
+
+  const handleGenerate = () => {
+    const pwd = generateStrongPassword(16);
+    setPassword(pwd);
+    analyzePassword(pwd);
   };
 
   return (
@@ -76,6 +116,18 @@ export default function PasswordPage() {
 
           {/* Input */}
           <PasswordInput value={password} onChange={handleChange} />
+
+          {/* Generator */}
+          <div className="flex justify-end">
+            <button
+              type="button"
+              onClick={handleGenerate}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[11px] font-medium bg-[var(--color-bg-primary)] border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors"
+            >
+              <Wand2 size={14} />
+              Generate strong password
+            </button>
+          </div>
 
           {/* Loading indicator */}
           {loading && (
