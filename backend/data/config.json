@@ -1,0 +1,10 @@
+{
+  "monitoredPaths": [],
+  "scanIntervals": {
+    "audit": 60000,
+    "network": 120000,
+    "logs": "realtime"
+  },
+  "knownDevices": [],
+  "logPath": "/var/log/auth.log"
+}

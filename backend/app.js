@@ -1,41 +1,70 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const morgan = require('morgan');
+require('dotenv').config();
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const logger = require('./utils/logger');
 
-var app = express();
+// Route imports
+const auditRouter = require('./routes/audit');
+const integrityRouter = require('./routes/integrity');
+const networkRouter = require('./routes/network');
+const passwordRouter = require('./routes/password');
+const logsRouter = require('./routes/logs');
+const alertsRouter = require('./routes/alerts');
+const healthRouter = require('./routes/health');
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+const app = express();
 
-app.use(logger('dev'));
+// CORS — allow frontend dev server
+app.use(cors({
+  origin: ['http://localhost:5173', 'http://localhost:3001', 'http://127.0.0.1:5173'],
+  credentials: true,
+}));
+
+// Middleware
+app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// API Routes
+app.use('/api/audit', auditRouter);
+app.use('/api/integrity', integrityRouter);
+app.use('/api/network', networkRouter);
+app.use('/api/password', passwordRouter);
+app.use('/api/logs', logsRouter);
+app.use('/api/alerts', alertsRouter);
+app.use('/api/health', healthRouter);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+// Serve React build in production
+app.use(express.static(path.join(__dirname, '../Frontend/dist')));
+app.get('*', (req, res, next) => {
+  // Only serve index.html for non-API routes
+  if (req.path.startsWith('/api')) return next();
+  const indexPath = path.join(__dirname, '../Frontend/dist/index.html');
+  const fs = require('fs');
+  if (fs.existsSync(indexPath)) {
+    res.sendFile(indexPath);
+  } else {
+    res.status(200).json({ message: 'CyberSec Toolkit API is running. Frontend build not found.' });
+  }
 });
 
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+// 404 handler for API routes
+app.use('/api/*', (req, res) => {
+  res.status(404).json({ error: true, message: `Route not found: ${req.originalUrl}` });
+});
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+// Global error handler
+app.use((err, req, res, next) => {
+  logger.error(`[${req.method}] ${req.path} — ${err.message}`);
+  res.status(err.status || 500).json({
+    error: true,
+    message: process.env.NODE_ENV === 'production' ? 'Internal server error' : err.message,
+  });
 });
 
 module.exports = app;
