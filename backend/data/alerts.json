@@ -1,1 +1,402 @@
-[]
+[
+  {
+    "id": "ff0d2d14-27df-4e38-9254-7c28ed184cb3",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T17:40:40.492Z",
+    "acknowledged": false
+  },
+  {
+    "id": "2e50f1e2-380e-446c-9877-225c1bb4d50f",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:51:32.355Z",
+    "acknowledged": false
+  },
+  {
+    "id": "db4bbbcd-fb06-4fe5-bf92-fc2b84e2ddbc",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:49:31.770Z",
+    "acknowledged": false
+  },
+  {
+    "id": "bd1a3b13-b7f0-4be0-bf17-d0b278033033",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:47:31.843Z",
+    "acknowledged": false
+  },
+  {
+    "id": "5ce9bd52-102b-4253-b64a-20af41db5fcb",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:47:31.755Z",
+    "acknowledged": false
+  },
+  {
+    "id": "f6fab163-6fed-488f-b552-148e520a99c0",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:46:03.672Z",
+    "acknowledged": false
+  },
+  {
+    "id": "7e9c17ab-8bb3-4794-bb84-dc56d1d91772",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:44:03.714Z",
+    "acknowledged": false
+  },
+  {
+    "id": "a5175ebe-6fd4-44ad-bc81-f5bb8b945e5a",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:42:08.098Z",
+    "acknowledged": false
+  },
+  {
+    "id": "d7e22d77-9f82-4e7f-9431-b465bbdf5fb9",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:42:08.028Z",
+    "acknowledged": false
+  },
+  {
+    "id": "911c0146-ca08-4476-a190-a876a691d413",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:41:56.770Z",
+    "acknowledged": false
+  },
+  {
+    "id": "bf4d39b6-dcce-4b03-9e67-245aca1282ff",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:41:56.063Z",
+    "acknowledged": false
+  },
+  {
+    "id": "bdaa21bd-e8a5-4f6e-9afd-9a7c6550eff2",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:41:48.627Z",
+    "acknowledged": false
+  },
+  {
+    "id": "b2122a55-05f5-470c-8217-49f42a3a0dc9",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:41:48.537Z",
+    "acknowledged": false
+  },
+  {
+    "id": "23d6a494-234c-4114-b29a-4ca093f0ede7",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:41:43.092Z",
+    "acknowledged": false
+  },
+  {
+    "id": "d3eba3dc-3ea6-4cce-aa55-a1d0d4abf1c7",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:41:41.543Z",
+    "acknowledged": false
+  },
+  {
+    "id": "397319ea-9416-4844-972b-95a56aeabb78",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:41:41.466Z",
+    "acknowledged": false
+  },
+  {
+    "id": "ebbee4c5-0f02-481d-af88-ea324916f432",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:41:23.825Z",
+    "acknowledged": false
+  },
+  {
+    "id": "e0aa5964-c1f4-4684-a56a-bf756983a5f7",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:41:23.746Z",
+    "acknowledged": false
+  },
+  {
+    "id": "59e4f68a-565f-419b-9ace-f93e23d4f4c7",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:41:15.429Z",
+    "acknowledged": false
+  },
+  {
+    "id": "0a0c15fb-63dc-4cc6-8a9c-ac5ed70630f3",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.168.35.27 (52:BD:16:A8:A9:90)",
+    "timestamp": "2026-03-12T16:41:14.953Z",
+    "acknowledged": false
+  },
+  {
+    "id": "e53a7e17-a61b-4e01-8f5b-42c0f9f34267",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.57.23 (E8:48:B8:F9:4E:52)",
+    "timestamp": "2026-03-12T16:40:41.568Z",
+    "acknowledged": false
+  },
+  {
+    "id": "9d8c0de2-c49f-47ce-b7e6-fc6c31f01ef0",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.32.159 (B0:E4:5C:1A:0A:FB)",
+    "timestamp": "2026-03-12T16:40:41.562Z",
+    "acknowledged": false
+  },
+  {
+    "id": "46de9890-574b-44f0-b144-8d0e8c81fda2",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.27.152 (CA:34:B2:85:0B:B4)",
+    "timestamp": "2026-03-12T16:40:41.555Z",
+    "acknowledged": false
+  },
+  {
+    "id": "edb2667f-31f8-4fcd-af84-e3a85f014a7a",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.25.54 (28:A4:4A:AF:81:2E)",
+    "timestamp": "2026-03-12T16:40:41.548Z",
+    "acknowledged": false
+  },
+  {
+    "id": "2783a6a0-82d3-4d09-8424-26522d45b705",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.21.6 (1A:DA:54:54:2C:B5)",
+    "timestamp": "2026-03-12T16:40:41.542Z",
+    "acknowledged": false
+  },
+  {
+    "id": "89c070c8-f979-4af4-b9b8-5a7678173869",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.19.114 (7C:64:6C:63:47:80)",
+    "timestamp": "2026-03-12T16:40:41.536Z",
+    "acknowledged": false
+  },
+  {
+    "id": "af372e97-48d1-4414-8064-310b6dc231af",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.17.180 (46:AF:2F:9A:E0:23)",
+    "timestamp": "2026-03-12T16:40:41.528Z",
+    "acknowledged": false
+  },
+  {
+    "id": "522e68b9-0cb3-4508-8621-81b2b89e63a8",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.14.32 (FE:E5:16:7A:B6:AE)",
+    "timestamp": "2026-03-12T16:40:41.522Z",
+    "acknowledged": false
+  },
+  {
+    "id": "b517a0e0-1bfc-43d0-94d1-9a92c6fb14bb",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.12.2 (D4:31:27:FF:AC:86)",
+    "timestamp": "2026-03-12T16:40:41.514Z",
+    "acknowledged": false
+  },
+  {
+    "id": "d3451c3f-4257-485d-8fc5-62b1040b1aa4",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.11.1 (7C:5A:1C:CF:5F:49)",
+    "timestamp": "2026-03-12T16:40:41.508Z",
+    "acknowledged": false
+  },
+  {
+    "id": "2bae6572-bcf3-444a-880f-ea5d1d3a04c3",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.57.23 (E8:48:B8:F9:4E:52)",
+    "timestamp": "2026-03-12T16:40:41.431Z",
+    "acknowledged": false
+  },
+  {
+    "id": "f785997f-2fa0-4463-b0de-b066a9247636",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.32.159 (B0:E4:5C:1A:0A:FB)",
+    "timestamp": "2026-03-12T16:40:41.424Z",
+    "acknowledged": false
+  },
+  {
+    "id": "1c8ca428-237d-43a7-95cf-a7ec5bf16758",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.27.152 (CA:34:B2:85:0B:B4)",
+    "timestamp": "2026-03-12T16:40:41.418Z",
+    "acknowledged": false
+  },
+  {
+    "id": "dc8cb328-8d56-48d8-909a-19bfc09f3a19",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.25.54 (28:A4:4A:AF:81:2E)",
+    "timestamp": "2026-03-12T16:40:41.411Z",
+    "acknowledged": false
+  },
+  {
+    "id": "d18e7526-e151-43c9-9591-1dac05b6dc3e",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.21.6 (1A:DA:54:54:2C:B5)",
+    "timestamp": "2026-03-12T16:40:41.406Z",
+    "acknowledged": false
+  },
+  {
+    "id": "36be885b-fb4c-464d-91a5-57005f47f476",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.19.114 (7C:64:6C:63:47:80)",
+    "timestamp": "2026-03-12T16:40:41.399Z",
+    "acknowledged": false
+  },
+  {
+    "id": "0ad83150-cb2f-430b-87b6-e3d2bcecf8d9",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.17.180 (46:AF:2F:9A:E0:23)",
+    "timestamp": "2026-03-12T16:40:41.392Z",
+    "acknowledged": false
+  },
+  {
+    "id": "8b2cb810-a5dc-4dac-9ebb-a74514b09999",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.14.32 (FE:E5:16:7A:B6:AE)",
+    "timestamp": "2026-03-12T16:40:41.386Z",
+    "acknowledged": false
+  },
+  {
+    "id": "e90a3109-98e5-47ac-a7fa-e99221cc47ca",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.12.2 (D4:31:27:FF:AC:86)",
+    "timestamp": "2026-03-12T16:40:41.379Z",
+    "acknowledged": false
+  },
+  {
+    "id": "15dd0bf6-78c0-4017-90cd-7cb643e86269",
+    "source": "network",
+    "type": "unknown_device",
+    "severity": "MEDIUM",
+    "title": "Unknown Device Detected",
+    "detail": "New device on network: 10.0.11.1 (7C:5A:1C:CF:5F:49)",
+    "timestamp": "2026-03-12T16:40:41.369Z",
+    "acknowledged": false
+  }
+]
