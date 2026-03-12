@@ -1,6 +1,15 @@
 const express = require('express');
+const crypto = require('crypto');
+const multer = require('multer');
 const router = express.Router();
 const FileService = require('../services/FileService');
+
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: {
+    fileSize: 10 * 1024 * 1024, // 10 MB
+  },
+});
 
 // GET /api/integrity/status — Get all monitored files and their status
 router.get('/status', async (req, res, next) => {
@@ -25,6 +34,35 @@ router.post('/add', async (req, res, next) => {
     if (err.message.includes('not found')) {
       return res.status(404).json({ error: true, message: err.message });
     }
+    next(err);
+  }
+});
+
+// POST /api/integrity/scan-upload — One-off scan of an uploaded file
+router.post('/scan-upload', upload.single('file'), async (req, res, next) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ error: true, message: 'File is required' });
+    }
+
+    const { originalname, mimetype, size, buffer } = req.file;
+    const sha256 = crypto.createHash('sha256').update(buffer).digest('hex');
+
+    // Simple heuristic verdict placeholder
+    const isExecutable = /\.(exe|dll|bat|cmd|ps1|msi)$/i.test(originalname);
+    const severity = isExecutable ? 'HIGH' : 'LOW';
+
+    res.json({
+      filename: originalname,
+      mimetype,
+      size,
+      sha256,
+      severity,
+      verdict: severity === 'HIGH'
+        ? 'Treat with caution (executable file).'
+        : 'No obvious issues detected from basic hash scan.',
+    });
+  } catch (err) {
     next(err);
   }
 });
